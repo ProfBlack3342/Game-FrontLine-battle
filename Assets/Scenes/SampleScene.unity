@@ -491,8 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825411be338c16843b37ff7c9d91e5c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3605888392054525509, guid: 4d5b0739a0dd2d4459ea9a2c59658274, type: 3}
-  bulletExit: {fileID: 1404886276}
+  bullet: {fileID: 0}
+  bulletExit: {fileID: 0}
 --- !u!1 &1404886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 2044864183}
   - component: {fileID: 2044864182}
   - component: {fileID: 2044864184}
+  - component: {fileID: 2044864185}
   m_Layer: 0
   m_Name: TanqueSemCanhao
   m_TagString: Untagged
@@ -986,7 +987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   moviment: {x: 0, y: 0}
-  tex: {fileID: 0}
 --- !u!50 &2044864183
 Rigidbody2D:
   serializedVersion: 4
@@ -1016,7 +1016,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044864179}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9f14b0cebe190d04fa057ffea609ec4a, type: 2}
   m_CullingMode: 0
@@ -1027,3 +1027,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2044864185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044864179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825411be338c16843b37ff7c9d91e5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3605888392054525509, guid: 4d5b0739a0dd2d4459ea9a2c59658274, type: 3}
+  bulletExit: {fileID: 1404886276}

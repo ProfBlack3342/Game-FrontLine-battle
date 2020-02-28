@@ -20,13 +20,6 @@ public class TanqueMovimento : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
-        transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-        sr.sprite = mySprite;
-    }
-
     void Update()
     {
         moviment.x = Input.GetAxisRaw("Horizontal");
