@@ -40,7 +40,7 @@ public class Disparo : MonoBehaviour
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Enemy")
+            if (collision.gameObject.CompareTag("Enemy"))
             {
                 Destroy(collision.gameObject);
 
