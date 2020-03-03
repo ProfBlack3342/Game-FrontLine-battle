@@ -12,14 +12,12 @@ public class TiroDoPlayer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            shootAt();
-        }
+            ShootAt();
+        }     
     }
 
-    void shootAt()
+    void ShootAt()
     {
-        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);        
-
-        bulletRgbd.velocity = transform.right * 8f;        
+        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);           
     }
 }

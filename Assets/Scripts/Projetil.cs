@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Disparo : MonoBehaviour
+public class Projetil : MonoBehaviour
 {
-    float speed = 5;
+    [SerializeField]
+    float speed = 25f;
 
     float timerSelfDestruct = 0;
     float timerSelfDestruct_Max = 5;
@@ -21,6 +22,9 @@ public class Disparo : MonoBehaviour
     void Start()
     {
         timerSelfDestruct = Time.time;
+
+        //Define a velocidade do rigidbody como um vetor que aponta para frente, multiplicado ao valor de "speed"
+        rgbd.velocity = transform.up * speed;
     }
 
     // Update is called once per frame

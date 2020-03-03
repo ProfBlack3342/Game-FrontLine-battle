@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    float movSpeed;
 
-    // Update is called once per frame
-    void Update()
+    float hp;
+
+    float ammoMax;
+    float ammoCurrent;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Ammo") && ammoCurrent < ammoMax)
+        {
+            ammoCurrent++;
+        }
     }
 }

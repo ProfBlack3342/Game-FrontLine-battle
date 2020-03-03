@@ -25,14 +25,6 @@ public class SpawnarMunicao : MonoBehaviour
     private float spawnarMuniMax;
 
     private int numero;
-   
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -67,11 +59,8 @@ public class SpawnarMunicao : MonoBehaviour
                 Vector2 Position = LinhaDeSpawnMuni4.transform.position;
 
                 SpawnMunicao(1, Random.Range(1, -1), Position);
-            }
-            
-        }
-
-       
+            }            
+        }       
     }
     public void SpawnMunicao(int QuantidadeMunicao, int DistanciaLinhaSpawn, Vector2 Munipos)
     {
