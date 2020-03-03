@@ -7,12 +7,6 @@ public class TiroDoPlayer : MonoBehaviour
     public Rigidbody2D bullet;
     public Transform bulletExit;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +18,8 @@ public class TiroDoPlayer : MonoBehaviour
 
     void shootAt()
     {
-        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);
+        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);        
 
-        bulletRgbd.velocity = transform.up * 8f;
+        bulletRgbd.velocity = transform.right * 8f;        
     }
 }

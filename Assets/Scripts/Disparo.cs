@@ -2,50 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Disparo : MonoBehaviour
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class Bullet : MonoBehaviour
+    float speed = 5;
+
+    float timerSelfDestruct = 0;
+    float timerSelfDestruct_Max = 5;
+
+    private Rigidbody2D rgbd;
+
+    private void Awake()
     {
-        float speed = 5;
+        rgbd = GetComponent<Rigidbody2D>();
+    }
 
-        float timerSelfDestruct = 0;
-        float timerSelfDestruct_Max = 5;
+    // Start is called before the first frame update
+    void Start()
+    {
+        timerSelfDestruct = Time.time;
+    }
 
-        private Rigidbody2D rgbd;
-
-        private void Awake()
+    // Update is called once per frame
+    void Update()
+    {
+        if (Time.time >= timerSelfDestruct + timerSelfDestruct_Max)
         {
-            rgbd = GetComponent<Rigidbody2D>();
-        }
+            Destroy(gameObject);
 
-        // Start is called before the first frame update
-        void Start()
-        {
             timerSelfDestruct = Time.time;
         }
+    }
 
-        // Update is called once per frame
-        void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            //rgbd.MovePosition(direction * speed * Time.deltaTime/*, Space.World*/);
+            Destroy(collision.gameObject);
 
-            if (Time.time >= timerSelfDestruct + timerSelfDestruct_Max)
-            {
-                Destroy(gameObject);
-
-                timerSelfDestruct = Time.time;
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                Destroy(collision.gameObject);
-
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }

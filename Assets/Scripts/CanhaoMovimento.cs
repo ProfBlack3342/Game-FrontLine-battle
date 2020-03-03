@@ -26,7 +26,7 @@ public class CanhaoMovimento : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        Debug.Log("Mouse position: " + mousePos);        
+        //Debug.Log("Mouse position: " + mousePos);        
     }
     void FixedUpdate()
     {
