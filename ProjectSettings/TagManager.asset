@@ -69,3 +69,6 @@ TagManager:
   - name: Canhao
     uniqueID: 1055121519
     locked: 0
+  - name: FrontLineBattle
+    uniqueID: 488615481
+    locked: 0
