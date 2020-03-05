@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class TiroDoPlayer : MonoBehaviour
 {
+    [SerializeField]
+    Municao municao;
+
     public Rigidbody2D bullet;
     public Transform bulletExit;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && municao.Ammo > 0)
         {
             ShootAt();
         }     
@@ -18,6 +21,8 @@ public class TiroDoPlayer : MonoBehaviour
 
     void ShootAt()
     {
-        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);           
+        Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);
+
+        municao.Ammo--;
     }
 }
