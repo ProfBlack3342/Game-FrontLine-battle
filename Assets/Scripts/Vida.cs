@@ -6,14 +6,11 @@ using UnityEngine.UI;
 
 public class Vida : MonoBehaviour
 {
-    public event Action QuandoPlayerMorrer;
-    
     public Slider slider_hp;
     [SerializeField]
     private int HPMax;
-
-    public int hp;
-
+    [SerializeField]
+    private int hp;
     public int HP
     {
         get
@@ -39,18 +36,16 @@ public class Vida : MonoBehaviour
 
                 if(slider_hp && slider_hp != null)
                 {
-                    slider_hp.value = 1;
+                    slider_hp.value = HPMax;
                 }
             }
             else
             {
                 if(slider_hp && slider_hp != null)
                 {
-                    slider_hp.value = (float)hp / (float)HPMax;
+                    slider_hp.value = hp;
                 }
-            }
-            
+            }            
         }
-    }
-  
+    }    
 }
