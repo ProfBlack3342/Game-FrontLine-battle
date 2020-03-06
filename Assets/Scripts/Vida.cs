@@ -43,7 +43,7 @@ public class Vida : MonoBehaviour
             {
                 if(slider_hp && slider_hp != null)
                 {
-                    slider_hp.value = hp;
+                    slider_hp.value = (float)hp/(float)HPMax;
                 }
             }            
         }
