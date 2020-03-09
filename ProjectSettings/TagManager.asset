@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ammo
+  - Tanque
+  - MinaTerrestre
+  - Armadilha
+  - Barra
   layers:
   - Default
   - TransparentFX
@@ -60,6 +64,9 @@ TagManager:
   - name: LinhaDeSpawnMuni2
     uniqueID: 4185229393
     locked: 0
+  - name: BarraEBordaHp
+    uniqueID: 1808384173
+    locked: 0
   - name: LinhaDeSpawnMuni1
     uniqueID: 617041137
     locked: 0
@@ -71,4 +78,31 @@ TagManager:
     locked: 0
   - name: FrontLineBattle
     uniqueID: 488615481
+    locked: 0
+  - name: 'BarraDeVidaSeparada '
+    uniqueID: 915241787
+    locked: 0
+  - name: MinaTerrestre
+    uniqueID: 3562125327
+    locked: 0
+  - name: bomba
+    uniqueID: 1778991175
+    locked: 0
+  - name: LinhaDeSpawnTrap1
+    uniqueID: 3440637909
+    locked: 0
+  - name: LinhaDeSpawnTrap2
+    uniqueID: 1339312367
+    locked: 0
+  - name: HpSeparado
+    uniqueID: 3834071563
+    locked: 0
+  - name: LinhaDeSpawnTrap3
+    uniqueID: 818189383
+    locked: 0
+  - name: LInhaDeSpawnTrap4
+    uniqueID: 1454850969
+    locked: 0
+  - name: GameOver
+    uniqueID: 958382145
     locked: 0

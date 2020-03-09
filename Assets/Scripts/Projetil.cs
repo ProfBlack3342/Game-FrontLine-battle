@@ -13,9 +13,15 @@ public class Projetil : MonoBehaviour
 
     private Rigidbody2D rgbd;
 
+    SpawnarArmadilhas spawnarArmadilhas_ref;
+    TiroDoPlayer tiroDoPlayer_ref;
+
     private void Awake()
     {
         rgbd = GetComponent<Rigidbody2D>();
+        spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
+        tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
+
     }
 
     // Start is called before the first frame update
@@ -32,7 +38,7 @@ public class Projetil : MonoBehaviour
     {
         if (Time.time >= timerSelfDestruct + timerSelfDestruct_Max)
         {
-            Destroy(gameObject);
+            tiroDoPlayer_ref.AdicionarOuDestruirProjetil(gameObject);
 
             timerSelfDestruct = Time.time;
         }
@@ -40,11 +46,12 @@ public class Projetil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.tag == "Armadilha")
         {
-            Destroy(collision.gameObject);
+            GameObject armadilha = collision.gameObject;
+            spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(armadilha);
 
-            Destroy(gameObject);
+            tiroDoPlayer_ref.AdicionarOuDestruirProjetil(gameObject);
         }
     }
 }

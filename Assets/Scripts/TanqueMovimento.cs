@@ -12,6 +12,8 @@ public class TanqueMovimento : MonoBehaviour
     Vector2 moviment;
 
     Animator animator;
+ 
+   
 
     void Awake()
     {
@@ -22,6 +24,8 @@ public class TanqueMovimento : MonoBehaviour
 
     void Update()
     {
+       
+
         moviment.x = Input.GetAxisRaw("Horizontal");
         moviment.y = Input.GetAxisRaw("Vertical");
 
