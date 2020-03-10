@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -29,15 +29,6 @@ public class SpawnarArmadilhas : MonoBehaviour
     private float spawnarTrapMax;
 
     private int numero;
-    
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -48,8 +39,7 @@ public class SpawnarArmadilhas : MonoBehaviour
             spawnarTrapInicial = 0;
 
             numero = Random.Range(1, 8);
-
-
+            
             if (numero == 1)
             {
                 Vector2 Position = LinhaDeSpawnTrap1.transform.position;
@@ -98,11 +88,7 @@ public class SpawnarArmadilhas : MonoBehaviour
 
                 SpawnArmadilhas<Bomba>(1, Random.Range(-2, 2), Position2);
             }
-
-
-        }
-
-        
+        }        
     }    
     public void SpawnArmadilhas<Y>(int quantidadeArmadilhas,int distanciaLinhaspawn, Vector2 Armpos)
     {
@@ -137,10 +123,7 @@ public class SpawnarArmadilhas : MonoBehaviour
                         Bomba.transform.position = Position;
                         Bomba.SetActive(true);
                     }
-                }
-
-
-                
+                }                
             }
             else
             {
@@ -155,6 +138,7 @@ public class SpawnarArmadilhas : MonoBehaviour
             }
         }
     }
+
     public void AdicionarOuDestruirArmadilhas(GameObject gameObject)
     {
         if (ListArmadilhas.Count > 0)

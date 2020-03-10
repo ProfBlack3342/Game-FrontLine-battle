@@ -8,28 +8,22 @@ public class Projetil : MonoBehaviour
     [SerializeField]
     float speed = 25f;
 
+    float bulletDmg = 1f;
+
     float timerSelfDestruct = 0;
     float timerSelfDestruct_Max = 5;
 
     private Rigidbody2D rgbd;
 
-    SpawnarArmadilhas spawnarArmadilhas_ref;
-    TiroDoPlayer tiroDoPlayer_ref;
-
     private void Awake()
     {
         rgbd = GetComponent<Rigidbody2D>();
-        spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
-        tiroDoPlayer_ref = GameObject.Find("Tanque").GetComponent<TiroDoPlayer>();
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
         timerSelfDestruct = Time.time;
-
-        //Define a velocidade do rigidbody como um vetor que aponta para frente, multiplicado ao valor de "speed"
         rgbd.velocity = transform.up * speed;
     }
 
@@ -38,7 +32,7 @@ public class Projetil : MonoBehaviour
     {
         if (Time.time >= timerSelfDestruct + timerSelfDestruct_Max)
         {
-            tiroDoPlayer_ref.AdicionarOuDestruirProjetil(gameObject);
+            Destroy(gameObject);
 
             timerSelfDestruct = Time.time;
         }
@@ -48,10 +42,9 @@ public class Projetil : MonoBehaviour
     {
         if (collision.tag == "Armadilha")
         {
-            GameObject armadilha = collision.gameObject;
-            spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(armadilha);
+            Destroy(collision.gameObject);
 
-            tiroDoPlayer_ref.AdicionarOuDestruirProjetil(gameObject);
+            Destroy(gameObject);
         }
     }
 }

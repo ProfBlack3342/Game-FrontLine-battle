@@ -4,32 +4,23 @@ using UnityEngine;
 
 public class Bomba : MonoBehaviour
 {
-    public int DanoDaBomba;
-    VidaFilled vidaFilled_ref;
-    SpawnarArmadilhas spawnarArmadilhas_ref;
-   
+    float bombDmg = 2f;
+    Vida vida_ref;
+    SpawnarArmadilhas spawnarArmadilhas_ref;   
     
-    void Start()
-    {
-        
-    }
     private void Awake()
     {
-        vidaFilled_ref = GameObject.Find("Tanque").GetComponent<VidaFilled>();
+        vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
         spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
     }
 
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Tanque")
+        if (collision.gameObject.tag == "Tanque")
         {
-            if (vidaFilled_ref.VidaAtual > 0)
-            {
-                vidaFilled_ref.VidaAtual -= DanoDaBomba;
-                spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(gameObject);
-            }
+            vida_ref.HP -= (int)bombDmg;
+
+            spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(gameObject);
         }
     }
-
 }

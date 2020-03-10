@@ -4,42 +4,23 @@ using UnityEngine;
 
 public class MinaTerrestre : MonoBehaviour
 {
-    //[SerializeField]
-    //MinaTerrestre minaTerrestre_ref;
-
-    VidaFilled vidaFilled_ref;
-    public int DanoDaMina;
+    float mineDmg = 2f;
+    Vida vida_ref;
     SpawnarArmadilhas spawnarArmadilhas_ref;
-
-
-
-    // Start is called before the first frame update
+       
     private void Awake()
     {
-        vidaFilled_ref = GameObject.Find("Tanque").GetComponent<VidaFilled>();
+        vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
         spawnarArmadilhas_ref = GameObject.Find("Game").GetComponent<SpawnarArmadilhas>();
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag=="Tanque")
+        if (collision.gameObject.tag == "Tanque")
         {
-            if (vidaFilled_ref.VidaAtual > 0)
-            {
+            vida_ref.HP -= (int)mineDmg;
 
-                vidaFilled_ref.VidaAtual -= DanoDaMina;
-
-                Debug.Log("Causou");
-
-                spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(gameObject);
-            }
+            spawnarArmadilhas_ref.AdicionarOuDestruirArmadilhas(gameObject);
         }
     }
-
 }
