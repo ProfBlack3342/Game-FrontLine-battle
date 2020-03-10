@@ -1507,26 +1507,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1365128507}
   - component: {fileID: 1365128506}
-  - component: {fileID: 1365128505}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: Gameover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1365128505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365128504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a119523463c58b94b971f2491d28a7ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1365128506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1902,6 +1889,7 @@ GameObject:
   - component: {fileID: 1496111310}
   - component: {fileID: 1496111311}
   - component: {fileID: 1496111312}
+  - component: {fileID: 1496111313}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1967,6 +1955,19 @@ MonoBehaviour:
   LinhaDeSpawnTrap4: {fileID: 994392677}
   spawnarTrapInicial: 4
   spawnarTrapMax: 4
+--- !u!114 &1496111313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496111309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a119523463c58b94b971f2491d28a7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gameover: {fileID: 1365128504}
 --- !u!1 &1559391971
 GameObject:
   m_ObjectHideFlags: 0
