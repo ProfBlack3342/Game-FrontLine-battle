@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Vida : MonoBehaviour
 {
+    [SerializeField]
     BarraDeHP hpBar;
 
-    private int HPMax;
+    private int HPMax = 7;
+    [SerializeField]
     private int hp;
     public int HP
     {
@@ -28,12 +30,12 @@ public class Vida : MonoBehaviour
                 hp = HPMax;
             }
 
-            hpBar.counter = hp;
+            hpBar.Counter = hp;
         }
     }
 
     private void Awake()
     {
-        HPMax = hpBar.hpStages.Length;
+        HP = HPMax;
     }
 }
