@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projetil : MonoBehaviour
 {
     [SerializeField]
-    float speed = 25f;
+    float speed;
 
     float bulletDmg = 1f;
 

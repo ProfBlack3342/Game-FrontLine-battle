@@ -4,7 +4,10 @@ using UnityEngine;
 using System.Linq;
 
 public class TiroDoPlayer : MonoBehaviour
-{    
+{
+    [SerializeField]
+    CameraScript camScript;
+
     [SerializeField]
     Municao municao;
 
@@ -25,5 +28,7 @@ public class TiroDoPlayer : MonoBehaviour
         Rigidbody2D bulletRgbd = Instantiate(bullet, bulletExit.position, bulletExit.rotation);
 
         municao.Ammo--;
+
+        camScript.cameraShake();
     }
 }
