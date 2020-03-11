@@ -14,7 +14,7 @@ public class DesativarSpawnMunicao : MonoBehaviour
     }
     void Start()
     {
-        vida_ref.onDeath += 
+        
     }
 
     // Update is called once per frame

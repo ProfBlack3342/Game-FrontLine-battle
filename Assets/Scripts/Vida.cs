@@ -8,6 +8,7 @@ public class Vida : MonoBehaviour
 {
     public event Action onDeath; 
 
+    [SerializeField]
     BarraDeHP hpBar;
 
     private int HPMax = 7;
@@ -24,10 +25,10 @@ public class Vida : MonoBehaviour
             hp = value;
 
             if (hp <= 0)
-            {
-                onDeath();
-
+            {                
                 hp = 0;
+
+                onDeath();
             }
             else if (hp >= HPMax)
             {
