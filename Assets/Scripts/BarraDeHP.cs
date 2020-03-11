@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class BarraDeHP : MonoBehaviour
 {
-    public Texture2D[] hpStages;
-    private Texture2D currentSprite;
+    public SpriteRenderer spriteRenderer;
 
-    public int counter;
+    public Sprite[] hpSprites;
 
-    public Rect hpSprite;
+    private int counter;
+    public int Counter
+    {
+        get
+        {
+            return counter;
+        }
+        set
+        {
+            counter = value;
+
+            spriteRenderer.sprite = hpSprites[counter];
+        }
+    }
 
     private void Awake()
     {
-        counter = hpStages.Length -1;
-        currentSprite = hpStages[counter];
-    }
-
-    private void OnGUI()
-    {
-        GUI.DrawTexture(hpSprite, currentSprite);
+        Counter = hpSprites.Length -1;
     }
 }
