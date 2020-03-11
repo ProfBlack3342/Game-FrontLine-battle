@@ -38,4 +38,16 @@ public class Vida : MonoBehaviour
     {
         HP = HPMax;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            HP--;
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            HP++;
+        }
+    }
 }
