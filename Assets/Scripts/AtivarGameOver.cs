@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DesativarSpawnMunicao : MonoBehaviour
+public class AtivarGameOver : MonoBehaviour
 {
-    SpawnarMunicao spawnarMunicao_ref;
     Vida vida_ref;
-
+    SpriteRenderer spriteRenderer_ref;
+    // Start is called before the first frame update
     private void Awake()
     {
-        spawnarMunicao_ref = GetComponent<SpawnarMunicao>();
         vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+        spriteRenderer_ref = GameObject.Find("GameOver").GetComponent<SpriteRenderer>();
+        
     }
+
     void Start()
     {
         
@@ -24,15 +26,14 @@ public class DesativarSpawnMunicao : MonoBehaviour
     }
     private void OnEnable()
     {
-        vida_ref.OnDeath += DesligarSpawnMunicao;
+        vida_ref.OnDeath += AcionarGameOver;
     }
     private void OnDisable()
     {
-        vida_ref.OnDeath -= DesligarSpawnMunicao;
+        vida_ref.OnDeath -= AcionarGameOver;
     }
-    public void DesligarSpawnMunicao()
+    public void AcionarGameOver()
     {
-        spawnarMunicao_ref.enabled = false;
-        Debug.Log("DesligarSpawnMunicao");
+        spriteRenderer_ref.enabled = true;
     }
 }

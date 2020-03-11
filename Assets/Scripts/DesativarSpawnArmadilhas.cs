@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DesativarSpawnMunicao : MonoBehaviour
+public class DesativarSpawnArmadilhas : MonoBehaviour
 {
-    SpawnarMunicao spawnarMunicao_ref;
     Vida vida_ref;
+    SpawnarArmadilhas spawnarArmadilhas_ref;
 
     private void Awake()
     {
-        spawnarMunicao_ref = GetComponent<SpawnarMunicao>();
         vida_ref = GameObject.Find("Tanque").GetComponent<Vida>();
+        spawnarArmadilhas_ref = GetComponent<SpawnarArmadilhas>();
     }
+
     void Start()
     {
         
@@ -24,15 +25,15 @@ public class DesativarSpawnMunicao : MonoBehaviour
     }
     private void OnEnable()
     {
-        vida_ref.OnDeath += DesligarSpawnMunicao;
+        vida_ref.OnDeath += DesligarSpawnArmadilha;
     }
     private void OnDisable()
     {
-        vida_ref.OnDeath -= DesligarSpawnMunicao;
+        vida_ref.OnDeath += DesligarSpawnArmadilha;
     }
-    public void DesligarSpawnMunicao()
+    public void DesligarSpawnArmadilha()
     {
-        spawnarMunicao_ref.enabled = false;
-        Debug.Log("DesligarSpawnMunicao");
+        spawnarArmadilhas_ref.enabled = false;
+        Debug.Log("DesligarSpawnArmadilhas");
     }
 }
