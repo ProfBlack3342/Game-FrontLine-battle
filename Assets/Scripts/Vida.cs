@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Vida : MonoBehaviour
 {
+    public event Action onDeath; 
+
     BarraDeHP hpBar;
 
     private int HPMax;
@@ -21,6 +24,8 @@ public class Vida : MonoBehaviour
 
             if (hp <= 0)
             {
+                onDeath();
+
                 hp = 0;
             }
             else if (hp >= HPMax)

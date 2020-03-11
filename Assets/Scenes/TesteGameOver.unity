@@ -1575,7 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a119523463c58b94b971f2491d28a7ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gameover: {fileID: 1365128504}
 --- !u!1 &1559391971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1cec92a97734b46b2bc26e245f1e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 0
+  movSpeed: 6
   movement: {x: 0, y: 0}
 --- !u!50 &2044864183
 Rigidbody2D:

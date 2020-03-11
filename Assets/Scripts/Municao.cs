@@ -36,4 +36,7 @@ public class Municao : MonoBehaviour
             ammoText.text = "" + ammo;
         }
     }
+  
+
 }
+
