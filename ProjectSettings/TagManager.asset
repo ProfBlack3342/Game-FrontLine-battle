@@ -9,6 +9,7 @@ TagManager:
   - MinaTerrestre
   - Armadilha
   - Barra
+  - Projetil
   layers:
   - Default
   - TransparentFX

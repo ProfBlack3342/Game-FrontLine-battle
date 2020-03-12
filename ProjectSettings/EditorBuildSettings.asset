@@ -8,10 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MENU.unity
     guid: b673b1abbb1050047adcc4ca3c2e10be
-  - enabled: 1
-    path: Assets/Scenes/Jogo.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 22215c4ad8b83f3448079c6017e140dc
+  - enabled: 1
+    path: Assets/Scenes/Jogo.unity
+    guid: 93590a26ecfa6fc4cae8d80a404d9a4f
+  - enabled: 1
+    path: Assets/Scenes/OffLine.unity
+    guid: 87e4c3b79375f8e4bb982f2c9796db24
+  - enabled: 1
+    path: Assets/Scenes/online.unity
+    guid: e342abea4409a2447a4cdba4b1d4697b
+  - enabled: 1
+    path: Assets/Scenes/TestePerderVida.unity
+    guid: a8fdeb5308baed64585eee81c6673558
   m_configObjects: {}
