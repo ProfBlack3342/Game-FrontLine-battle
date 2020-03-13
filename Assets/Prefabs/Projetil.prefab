@@ -110,7 +110,6 @@ GameObject:
   - component: {fileID: 2011448349234564694}
   - component: {fileID: 2011448349234564689}
   - component: {fileID: 2011448349234564688}
-  - component: {fileID: 2011448349234564695}
   - component: {fileID: 4309962710187807700}
   m_Layer: 0
   m_Name: Projetil
@@ -181,19 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09253889, y: 0.27532136}
   m_EdgeRadius: 0
---- !u!114 &2011448349234564695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011448349234564693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37970bf5bff93fc4eb9ea4cf45edd4aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &4309962710187807700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 3799200811
+  sceneId: 2248730074
   serverOnly: 0
   m_AssetId: 

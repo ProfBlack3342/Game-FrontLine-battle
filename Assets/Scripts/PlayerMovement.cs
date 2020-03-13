@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class TanqueMovimento : NetworkBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
-    public float movSpeed;
+    public float speed;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -15,11 +15,6 @@ public class TanqueMovimento : NetworkBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         if (isLocalPlayer)
@@ -27,7 +22,7 @@ public class TanqueMovimento : NetworkBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 
-            rb.MovePosition(rb.position + movement * movSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         }
     }
 }

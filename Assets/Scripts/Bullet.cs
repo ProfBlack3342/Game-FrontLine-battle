@@ -1,25 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Projetil : MonoBehaviour
+public class Bullet : NetworkBehaviour
 {
-    [SerializeField]
     public float speed;
-
-    public float bulletDmg = 1f;
 
     private float timerSelfDestruct = 0;
     private float timerSelfDestruct_Max = 5;
 
-    private Rigidbody2D rgbd;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
-        rgbd = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         timerSelfDestruct = Time.time;
-        rgbd.velocity = transform.up * speed;
+        rb.velocity = transform.up * speed;
     }
 
     void Update()
@@ -34,10 +31,8 @@ public class Projetil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Armadilha")
+        if (collision.tag == "Player" || collision.tag == "Trap" || collision.tag == "Wall")
         {
-            Destroy(collision.gameObject);
-
             Destroy(gameObject);
         }
     }

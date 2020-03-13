@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1977603210952328487}
   - component: {fileID: 2639088972887832535}
   - component: {fileID: 6197418348946905944}
-  - component: {fileID: 2456826282710682213}
   - component: {fileID: -6752156138278533285}
   m_Layer: 0
   m_Name: Bomba
@@ -108,18 +107,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.59, y: 2.09}
   m_EdgeRadius: 0
---- !u!114 &2456826282710682213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6197418348946905943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a130516f5e79d438a33b9cfac81148, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-6752156138278533285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneId: 284542828
+  sceneId: 1430099437
   serverOnly: 0
   m_AssetId: 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanhaoMovimento : MonoBehaviour
 {   
-    Rigidbody2D righ;
+    Rigidbody2D rb;
     
     Vector2 mousePos;
 
@@ -15,22 +15,20 @@ public class CanhaoMovimento : MonoBehaviour
 
     void Awake()
     {
-        righ = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = Tanque.transform.position;        
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);      
-    }
     void FixedUpdate()
     {
-        Vector2 OlharDirecao = mousePos - righ.position;
+        transform.position = Tanque.transform.position;
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 OlharDirecao = mousePos - rb.position;
 
         float angle = Mathf.Atan2(OlharDirecao.y,OlharDirecao.x) * Mathf.Rad2Deg-90f;
         
-        righ.rotation = angle; 
+        rb.rotation = angle; 
     }
 }
